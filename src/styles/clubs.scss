@@ -1,0 +1,22 @@
+.clubs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 60px;
+
+    .each-club {
+        width: 20%;
+        margin: 20px;
+        
+
+        img {
+            width: 250px;
+            height: 200px
+        };
+
+        h4 {
+            font-family: "Courier New", Courier, monospace;
+        }
+    }
+}
