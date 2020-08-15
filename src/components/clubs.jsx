@@ -14,9 +14,11 @@ export default class Clubs extends React.Component {
     render(){
         return (
             <>
-                <h1>Find your tribe</h1>
+                <h1
+                    style={{fontFamily: "Courier New, Courier, monospace"}}
+                >Find your tribe</h1>
                 <div className="clubs">
-                    {clubs.map(club => <Club club={club}/>)}
+                    {clubs.map(club => <Club club={club} history={this.props.props.history}/>)}
                 </div>
             </>
         )
