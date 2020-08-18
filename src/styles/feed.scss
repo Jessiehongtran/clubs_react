@@ -9,6 +9,16 @@
     overflow: hidden;
     border-top: hidden;
 
+    @media (max-width: 1000px) {
+        margin-left: 10%;
+        margin-right: 15%;
+    }   
+
+    @media (max-width: 500px) {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
     textarea {
         // width: 90%;
         height: 100px;
@@ -58,8 +68,10 @@
             padding: 20px 40px 20px 40px;
             background-color: green;
 
-            p {
-                // width: 100%;
+
+
+            .text {
+                font-family: "Courier New", Courier, monospace;
                 white-space: pre-wrap;      
                 word-wrap: break-all;
                 text-align: left;

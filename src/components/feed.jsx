@@ -31,11 +31,12 @@ export default class Feed extends React.Component {
 
     render(){
         const {feeds} = this.state;
+        const name = localStorage.getItem('name')|| ""
 
         return (
             <div className="feed">
                 <textarea rows="10" cols="1"
-                    placeholder="What's up?" 
+                    placeholder={"What's up," + name + "?"}
                     onChange={this.handleChange}
                 />
                 <div className="btn">
@@ -46,7 +47,7 @@ export default class Feed extends React.Component {
                 </div>
                 {feeds.map(feed => 
                     <div className="each-feed">
-                        <p>{feed}</p>
+                        <p className="text">{feed}</p>
                     </div>
                 )}
             </div>
