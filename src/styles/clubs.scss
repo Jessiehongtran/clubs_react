@@ -3,12 +3,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-left: 60px;
+    padding-left: 30px;
+
+    @media (max-width: 500px){
+        width: 100%;
+        justify-content: center;
+        padding-left: 0;
+    }
 
     .each-club {
         width: 20%;
         margin: 20px;
         padding: 10px;
+
+        @media (max-width: 1000px){
+            width: 30%
+        }
+
+        @media (max-width: 500px){
+            width: 50%
+        }
 
         img {
             width: 100%;

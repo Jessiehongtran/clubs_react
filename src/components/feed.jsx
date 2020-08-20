@@ -66,7 +66,7 @@ export default class Feed extends React.Component {
                     >pop
                     </button>
                 </div>
-                {this.state.feeds.map(feed => 
+                {feeds.map(feed => 
                     <div className="each-feed">
                         <p className="text">{feed.comment}</p>
                     </div>

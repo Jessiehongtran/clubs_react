@@ -63,19 +63,19 @@
         button:focus {
             outline:0;
         }
+    }
 
-        .each-feed{
-            padding: 20px 40px 20px 40px;
-            background-color: green;
+    .each-feed{
+        padding: 0px 20px 0px 20px;
+        display: flex;
+        flex-wrap: wrap;
 
-
-
-            .text {
-                font-family: "Courier New", Courier, monospace;
-                white-space: pre-wrap;      
-                word-wrap: break-all;
-                text-align: left;
-            }
+        .text,p {
+            font-family: "Courier New", Courier, monospace;
+            text-align: left;
+            border-radius: 8px;
+            background-color: #F6F3F3;
+            padding: 8px
         }
     }
 }
