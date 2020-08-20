@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/feed.scss'
+import '../styles/feed.scss';
+import { API_URL } from '../config';
+import Axios from 'axios';
 
 export default class Feed extends React.Component {
     constructor(props){
@@ -13,6 +15,22 @@ export default class Feed extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    getComments(){
+        const clubId = parseInt(this.props.props.match.params.clubName)
+        Axios.get(`${API_URL}/comments/club/${clubId}`)
+             .then(res => {
+                 console.log(res.data)
+                 this.setState({feeds: res.data})
+             })
+             .catch(err => {
+                 console.log(err)
+             })
+    }
+
+    componentDidMount(){
+        this.getComments()
+    }
+
     handleChange(e){
         this.setState({
             text: e.target.value
@@ -21,12 +39,15 @@ export default class Feed extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        this.setState({
-            feeds: [
-                ...this.state.feeds,
-                this.state.text
-            ]
-        })
+        const clubId = parseInt(this.props.props.match.params.clubName)
+        Axios.post(`${API_URL}/comments/club/${clubId}`, {comment: this.state.text})
+            .then(res => {
+                console.log(res.data)
+                this.getComments()
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     render(){
@@ -45,9 +66,9 @@ export default class Feed extends React.Component {
                     >pop
                     </button>
                 </div>
-                {feeds.map(feed => 
+                {this.state.feeds.map(feed => 
                     <div className="each-feed">
-                        <p className="text">{feed}</p>
+                        <p className="text">{feed.comment}</p>
                     </div>
                 )}
             </div>

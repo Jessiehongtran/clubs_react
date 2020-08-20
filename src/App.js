@@ -22,7 +22,7 @@ function App() {
         render={
           props => {
             return (
-              <Feed/>
+              <Feed props={props}/>
             )
           }
         } 

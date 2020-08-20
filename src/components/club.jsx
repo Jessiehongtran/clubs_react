@@ -12,10 +12,10 @@ export default class Club extends React.Component {
         return (
             <div 
                 className="each-club"
-                onClick={() => this.props.history.push(`/${this.props.club.name}`)}
+                onClick={() => this.props.history.push(`/${this.props.club.id}`)}
             >
-                <img src={this.props.club.image}/>
-                <h4>{this.props.club.name}</h4>
+                <img src={this.props.club.image_url}/>
+                <h4>{this.props.club.club_name}</h4>
             </div>
         )
     }
